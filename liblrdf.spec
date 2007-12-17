@@ -15,7 +15,6 @@ Source:		http://prdownloads.sourceforge.net/lrdf/%{name}-%{version}.tar.bz2
 URL:		http://sourceforge.net/projects/lrdf
 License:	GPL
 Group:		System/Libraries
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	raptor-devel ladspa-devel
 
 %description
