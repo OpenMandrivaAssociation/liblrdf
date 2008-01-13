@@ -1,6 +1,6 @@
 %define name liblrdf
 %define version 0.4.0
-%define release %mkrel 3
+%define release %mkrel 4
 
 %define major 	2
 %define real_name lrdf 
