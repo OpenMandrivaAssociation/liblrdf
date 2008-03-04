@@ -1,6 +1,5 @@
 %define name liblrdf
 %define version 0.4.0
-%define release %mkrel 4
 
 %define major 	2
 %define real_name lrdf 
@@ -9,7 +8,7 @@
 Name: 		%{name}
 Summary: 	Library for handling RDF descriptions of audio plugins
 Version: 	%{version}
-Release: 	%{release}
+Release: 	%mkrel 5
 
 Source:		http://prdownloads.sourceforge.net/lrdf/%{name}-%{version}.tar.bz2
 URL:		http://sourceforge.net/projects/lrdf
