@@ -8,7 +8,7 @@
 Name: 		%{name}
 Summary: 	Library for handling RDF descriptions of audio plugins
 Version: 	%{version}
-Release: 	%mkrel 9
+Release: 	%mkrel 10
 
 Source:		http://prdownloads.sourceforge.net/lrdf/%{name}-%{version}.tar.bz2
 URL:		http://sourceforge.net/projects/lrdf
