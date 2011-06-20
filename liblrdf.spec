@@ -8,7 +8,7 @@
 Name: 		%{name}
 Summary: 	Library for handling RDF descriptions of audio plugins
 Version: 	%{version}
-Release: 	%mkrel 10
+Release: 	%mkrel 11
 
 Source:		http://prdownloads.sourceforge.net/lrdf/%{name}-%{version}.tar.bz2
 URL:		http://sourceforge.net/projects/lrdf
@@ -75,6 +75,10 @@ rm -rf $RPM_BUILD_ROOT
 # (misc) remove this once the libcurl package is fixed and do not
 # contain reference to /home, no rpmlint warning.
 #perl -pi -e 's#-L/export/home/\w+##' $RPM_BUILD_ROOT/%{_libdir}/*.la
+
+%if "%{_lib}" == "lib64"
+perl -pi -e "s|-L/usr/lib\b|-L%{_libdir}|g" %{buildroot}%{_libdir}/*.la
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
