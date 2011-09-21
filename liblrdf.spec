@@ -15,7 +15,7 @@ URL:		http://sourceforge.net/projects/lrdf
 License:	GPL
 Group:		System/Libraries
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	raptor-devel ladspa-devel
+BuildRequires:	raptor2-devel ladspa-devel
 
 Patch0:		liblrdf-0.4.0-dontbuild-tests.patch
 Patch1:		liblrdf-0.4.0-raptor2.patch	
