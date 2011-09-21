@@ -77,6 +77,10 @@ applications which will use libraries from %name.
 %patch3
 
 libtoolize --copy --force --install --automake
+aclocal
+autoconf
+autoheader
+automake --add-missing --copy
 
 
 %build
