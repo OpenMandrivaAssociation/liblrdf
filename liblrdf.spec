@@ -8,14 +8,20 @@
 Name: 		%{name}
 Summary: 	Library for handling RDF descriptions of audio plugins
 Version: 	%{version}
-Release: 	%mkrel 11
+Release: 	%mkrel 12
 
-Source:		http://prdownloads.sourceforge.net/lrdf/%{name}-%{version}.tar.bz2
+Source:		http://prdownloads.sourceforge.net/lrdf/%{name}-%{version}.tar.gz
 URL:		http://sourceforge.net/projects/lrdf
 License:	GPL
 Group:		System/Libraries
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	raptor-devel ladspa-devel
+
+Patch0:		liblrdf-0.4.0-dontbuild-tests.patch
+Patch1:		liblrdf-0.4.0-raptor2.patch	
+Patch2:		liblrdf-0.4.0-raptor2-pkgconfig.patch
+Patch3:		liblrdf-0.4.0-rename_clashing_md5_symbols.patch
+
 
 %description
 liblrdf is a library for handling RDF (http://www.w3.org/RDF/)
@@ -64,6 +70,14 @@ applications which will use libraries from %name.
 
 %prep
 %setup -q
+
+%patch0
+%patch1
+%patch2
+%patch3
+
+libtoolize --copy --force --install --automake
+
 
 %build
 %configure2_5x
