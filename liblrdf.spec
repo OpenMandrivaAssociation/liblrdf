@@ -88,18 +88,18 @@ automake --add-missing --copy
 %make
 										
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 # (misc) remove this once the libcurl package is fixed and do not
 # contain reference to /home, no rpmlint warning.
-#perl -pi -e 's#-L/export/home/\w+##' $RPM_BUILD_ROOT/%{_libdir}/*.la
+#perl -pi -e 's#-L/export/home/\w+##' %{buildroot}/%{_libdir}/*.la
 
 %if "%{_lib}" == "lib64"
 perl -pi -e "s|-L/usr/lib\b|-L%{_libdir}|g" %{buildroot}%{_libdir}/*.la
 %endif
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
