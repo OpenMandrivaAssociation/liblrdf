@@ -8,7 +8,7 @@
 Name: 		%{name}
 Summary: 	Library for handling RDF descriptions of audio plugins
 Version: 	%{version}
-Release: 	%mkrel 12
+Release: 	13
 
 Source:		http://prdownloads.sourceforge.net/lrdf/%{name}-%{version}.tar.gz
 URL:		http://sourceforge.net/projects/lrdf
@@ -84,7 +84,7 @@ automake --add-missing --copy
 
 
 %build
-%configure2_5x
+%configure2_5x --enable-static=no
 %make
 										
 %install
@@ -94,19 +94,13 @@ rm -rf %{buildroot}
 # contain reference to /home, no rpmlint warning.
 #perl -pi -e 's#-L/export/home/\w+##' %{buildroot}/%{_libdir}/*.la
 
-%if "%{_lib}" == "lib64"
-perl -pi -e "s|-L/usr/lib\b|-L%{_libdir}|g" %{buildroot}%{_libdir}/*.la
-%endif
+#%if "%{_lib}" == "lib64"
+#perl -pi -e "s|-L/usr/lib\b|-L%{_libdir}|g" %{buildroot}%{_libdir}/*.la
+#%endif
+rm -f %{buildroot}%{_libdir}/*.la
 
 %clean
 rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
 
 %files -n %{libname}
 %defattr(-,root,root)
@@ -121,7 +115,5 @@ rm -rf %{buildroot}
 %doc AUTHORS COPYING ChangeLog NEWS README
 %{_includedir}/*
 %{_libdir}/*.so
-%{_libdir}/*.a
-%{_libdir}/*.la
 %{_libdir}/pkgconfig/*.pc
 
