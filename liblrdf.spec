@@ -18,6 +18,7 @@ Patch0:		liblrdf-0.4.0-dontbuild-tests.patch
 Patch1:		liblrdf-0.4.0-raptor2.patch
 Patch2:		liblrdf-0.4.0-raptor2-pkgconfig.patch
 Patch3:		liblrdf-0.4.0-rename_clashing_md5_symbols.patch
+Patch4:		liblrdf-automake-1.13.patch
 
 
 %description
@@ -70,6 +71,7 @@ applications which will use libraries from %{name}.
 %patch1
 %patch2
 %patch3
+%patch4 -p1 -b .am113~
 
 libtoolize --copy --force --install --automake
 aclocal

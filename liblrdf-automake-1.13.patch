@@ -1,0 +1,13 @@
+--- liblrdf-0.4.0/configure.ac.bero	2013-01-15 23:37:06.824007652 +0100
++++ liblrdf-0.4.0/configure.ac	2013-01-15 23:37:22.468820009 +0100
+@@ -1,7 +1,7 @@
+ # Process this file with autoconf to produce a configure script.
+-AC_INIT(src/lrdf.c)
+-AM_CONFIG_HEADER(config.h)
+-AM_INIT_AUTOMAKE(liblrdf, 0.4.0)
++AC_INIT(liblrdf, 0.4.0)
++AC_CONFIG_HEADERS([config.h])
++AM_INIT_AUTOMAKE
+ 
+ LRDF_LIBTOOL_VERSION=2:0:0
+ 
