@@ -1,5 +1,5 @@
---- lrdf.pc.in
-+++ lrdf.pc.in
+--- ./lrdf.pc.in
++++ ./lrdf.pc.in
 @@ -6,5 +6,5 @@
  Name: liblrdf
  Version: @VERSION@

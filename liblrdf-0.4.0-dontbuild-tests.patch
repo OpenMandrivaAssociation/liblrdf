@@ -1,7 +1,7 @@
 http://bugs.gentoo.org/226281
 
---- examples/Makefile.am
-+++ examples/Makefile.am
+--- ./examples/Makefile.am
++++ ./examples/Makefile.am
 @@ -1,7 +1,9 @@
 -noinst_PROGRAMS = showdefaults showtaxonomy dumpstatements export_test \
 -	subclass_test add_test instances_test remove_test multi_test \

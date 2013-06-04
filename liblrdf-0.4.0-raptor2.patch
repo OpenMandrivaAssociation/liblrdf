@@ -1,7 +1,7 @@
 http://projects.archlinux.org/svntogit/packages.git/plain/liblrdf/trunk/raptor2.diff
 
---- src/Makefile.am
-+++ src/Makefile.am
+--- ./src/Makefile.am
++++ ./src/Makefile.am
 @@ -4,5 +4,5 @@ lib_LTLIBRARIES = liblrdf.la
  noinst_HEADERS = lrdf_md5.h md5_loc.h ladspa.h
  
@@ -9,8 +9,8 @@ http://projects.archlinux.org/svntogit/packages.git/plain/liblrdf/trunk/raptor2.
 -liblrdf_la_LIBADD = -lraptor
 +liblrdf_la_LIBADD = -lraptor2
  liblrdf_la_LDFLAGS = -version-info @LRDF_LIBTOOL_VERSION@
---- src/lrdf.c
-+++ src/lrdf.c
+--- ./src/lrdf.c
++++ ./src/lrdf.c
 @@ -18,6 +18,7 @@
  static unsigned int lrdf_uid = 0;	/* A unique(ish) id to append to genid's to
  					 * avoid clashses */
@@ -182,8 +182,8 @@ http://projects.archlinux.org/svntogit/packages.git/plain/liblrdf/trunk/raptor2.
  	raptor_free_uri(furi);
  	raptor_free_uri(ruri);
  	raptor_free_parser(parser);
---- configure.ac
-+++ configure.ac
+--- ./configure.ac
++++ ./configure.ac
 @@ -18,7 +18,7 @@
  AC_HEADER_STDC
  AC_CHECK_HEADERS([errno.h limits.h stdlib.h string.h unistd.h])

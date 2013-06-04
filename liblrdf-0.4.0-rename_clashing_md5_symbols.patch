@@ -1,7 +1,7 @@
 From Debian patchset of liblrdf0 package; also reported at sf.net lrdf project page
 
---- src/lrdf_md5.h
-+++ src/lrdf_md5.h
+--- ./src/lrdf_md5.h
++++ ./src/lrdf_md5.h
 @@ -32,6 +32,15 @@
  #ifndef __MD5_H__
  #define __MD5_H__
