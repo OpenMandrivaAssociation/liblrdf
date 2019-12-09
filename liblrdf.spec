@@ -1,11 +1,11 @@
-%define major	2
+%define major 2
 %define libname %mklibname lrdf %{major}
 %define devname %mklibname lrdf -d
 
 Summary:	Library for handling RDF descriptions of audio plugins
 Name:		liblrdf
 Version:	0.4.0
-Release:	24
+Release:	25
 License:	GPLv2
 Group:		System/Libraries
 Url:		http://sourceforge.net/projects/lrdf
@@ -56,16 +56,15 @@ This package contains the headers that programmers will need to develop
 applications which will use libraries from %{name}.
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 autoreconf -fi
 
 %build
-%configure2_5x --disable-static
-%make
+%configure --disable-static
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files common
 %{_datadir}/ladspa/rdf/
@@ -78,4 +77,3 @@ autoreconf -fi
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
-
