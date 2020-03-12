@@ -1,20 +1,18 @@
 %define major 2
 %define libname %mklibname lrdf %{major}
 %define devname %mklibname lrdf -d
+%define gitname LRDF
+%define sourcename lrdf
 
 Summary:	Library for handling RDF descriptions of audio plugins
 Name:		liblrdf
-Version:	0.4.0
-Release:	25
+Version:	0.6.1
+Release:	1
 License:	GPLv2
 Group:		System/Libraries
-Url:		http://sourceforge.net/projects/lrdf
-Source0:	http://prdownloads.sourceforge.net/lrdf/%{name}-%{version}.tar.gz
-Patch0:		liblrdf-0.4.0-dontbuild-tests.patch
-Patch1:		liblrdf-0.4.0-raptor2.patch
-Patch2:		liblrdf-0.4.0-raptor2-pkgconfig.patch
-Patch3:		liblrdf-0.4.0-rename_clashing_md5_symbols.patch
-Patch4:		liblrdf-automake-1.13.patch
+Url:		https://github.com/swh/LRDF
+Source0:	https://github.com/swh/%{gitname}/archive/v%{version}.tar.gz/%{sourcename}-%{version}.tar.gz
+
 BuildRequires:	ladspa-devel
 BuildRequires:	pkgconfig(raptor2)
 
@@ -56,7 +54,9 @@ This package contains the headers that programmers will need to develop
 applications which will use libraries from %{name}.
 
 %prep
-%autosetup -p1
+
+%autosetup  -n %{sourcename}-%{version} 
+#-n %{sourcename}-%{version} -p1  
 autoreconf -fi
 
 %build

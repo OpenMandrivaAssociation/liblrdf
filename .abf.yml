@@ -1,2 +1,3 @@
 sources:
-  "liblrdf-0.4.0.tar.gz": 17ce55f692bc52ed12605091b99106255f964b5f
+  liblrdf-0.4.0.tar.gz: 17ce55f692bc52ed12605091b99106255f964b5f
+  lrdf-0.6.1.tar.gz: 4a61af397f8782d7390d113ff621af3f471fb338
