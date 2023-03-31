@@ -7,7 +7,7 @@
 Summary:	Library for handling RDF descriptions of audio plugins
 Name:		liblrdf
 Version:	0.6.1
-Release:	1
+Release:	2
 License:	GPLv2
 Group:		System/Libraries
 Url:		https://github.com/swh/LRDF
