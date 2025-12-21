@@ -13,6 +13,11 @@ Group:		System/Libraries
 Url:		https://github.com/swh/LRDF
 Source0:	https://github.com/swh/%{gitname}/archive/v%{version}.tar.gz/%{sourcename}-%{version}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	ladspa-devel
 BuildRequires:	pkgconfig(raptor2)
 
